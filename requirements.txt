@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+pdfminer.six
+python-docx
+scikit-learn
+pandas
+stripe
+python-dotenv
