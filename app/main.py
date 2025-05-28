@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from app.routers.health import router as health_router
 
-app = FASTAPI(
+app = FastAPI(
     title='Jobfluence',
     description='Analyze resume vs. job description and provide similarity score + tips',
     version='0.1.0'
