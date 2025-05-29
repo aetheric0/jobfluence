@@ -30,3 +30,8 @@ jobs:
           uvicorn app.main:app --port 8000 &
           sleep 5
           curl -f http://localhost:8000/health/
+
+      - name: Run Unit tests
+        run: |
+          source ./venv/bin/activate
+          pytest
