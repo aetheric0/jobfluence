@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JobFluence Demo UI - Rich Experience</title>
+  <!-- Link to the external CSS file -->
+  <link rel="stylesheet" href="/static/css/demo.css">
+  <!-- Include Animate.css for additional animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="icon" href="/static/images/favicon.ico">
+</head>
+<body>
+  <!-- Floating bubbles background -->
+  <div class="bubbles">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+
+  <header>
+    <h1 class="animate__animated animate__fadeInDown">JobFluence</h1>
+    <p class="subtitle animate__animated animate__fadeInDown">Your Smart Resume Matching Solution</p>
+  </header>
+  
+  <main>
+    <!-- Upload Section -->
+    <section class="upload-section animate__animated animate__fadeInUp">
+      <form action="/demo/match" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="file">Upload Resume (PDF or Word):</label>
+          <input type="file" id="file" name="file" 
+                 accept="application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document" 
+                 required>
+        </div>
+        <div class="form-group">
+          <label for="job_description">Job Description:</label>
+          <textarea id="job_description" name="job_description" rows="8" 
+                    placeholder="Paste job description here..." required></textarea>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+    
+    <!-- Parsed Resume Display -->
+    {% if resume_text %}
+      <section class="result-section animate__animated animate__fadeIn">
+        <h2>Parsed Resume Text:</h2>
+        <p>{{ resume_text }}</p>
+      </section>
+    {% endif %}
+  
+    <!-- Matching Result Display -->
+    {% if match_percentage is not none %}
+      <section class="result-section animate__animated animate__fadeIn">
+        <h2>Matching Result:</h2>
+        <p>Match Percentage: {{ "%.2f"|format(match_percentage|default(0)) }}%</p>
+      </section>
+    {% endif %}
+    
+    <!-- Tips & Recommendations Section -->
+    <section class="tips-section animate__animated animate__fadeInUp">
+      <h2>Tips & Recommendations</h2>
+      <div class="card coming-soon">
+        <h3>Coming Soon</h3>
+        <p>Smart suggestions to refine your resume will be available here shortly.</p>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; {{ now().year }} JobFluence. All rights reserved.</p>
+  </footer>
+</body>
+</html>

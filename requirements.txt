@@ -1,9 +1,12 @@
 fastapi
 uvicorn[standard]
 pdfminer.six
-python-docx
 scikit-learn
 pandas
 stripe
 python-dotenv
-textract
+tika
+sentence-transformers
+Jinja2
+pytest
+unicodedata

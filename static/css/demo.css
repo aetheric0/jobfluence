@@ -1,0 +1,179 @@
+/* ------------------------- */
+/* Floating Bubbles Background */
+/* ------------------------- */
+.bubbles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -150px;
+  background: rgba(255, 255, 255, 0.3); /* Increased opacity */
+  border-radius: 50%;
+  opacity: 0.9; /* More visible */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Stronger glow */
+  animation: rise 12s infinite ease-in-out;
+}
+
+/* Keyframes for bubble rising */
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-1200px) scale(1.5);
+    opacity: 0.5;
+  }
+}
+
+/* Bubble variations */
+.bubbles .bubble:nth-child(1) { left: 5%; width: 60px; height: 60px; animation-duration: 13s; }
+.bubbles .bubble:nth-child(2) { left: 15%; width: 80px; height: 80px; animation-duration: 11s; }
+.bubbles .bubble:nth-child(3) { left: 35%; width: 50px; height: 50px; animation-duration: 9s; }
+.bubbles .bubble:nth-child(4) { left: 50%; width: 70px; height: 70px; animation-duration: 10s; }
+.bubbles .bubble:nth-child(5) { left: 65%; width: 40px; height: 40px; animation-duration: 12s; }
+.bubbles .bubble:nth-child(6) { left: 80%; width: 90px; height: 90px; animation-duration: 14s; }
+.bubbles .bubble:nth-child(7) { left: 90%; width: 30px; height: 30px; animation-duration: 8s; }
+.bubbles .bubble:nth-child(8) { left: 25%; width: 100px; height: 100px; animation-duration: 15s; }
+
+/* ------------------------- */
+/* General Styling */
+/* ------------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0d0d0d, #1f1f1f); /* Dark background */
+  color: #ddd;
+}
+
+/* ------------------------- */
+/* Header */
+/* ------------------------- */
+header {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #007BFF, #00D4FF);
+  color: #fff;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3em;
+}
+
+header .subtitle {
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+
+/* ------------------------- */
+/* Main Content */
+/* ------------------------- */
+main {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.1); /* Slight transparency to blend with bubbles */
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* ------------------------- */
+/* Form & Section Styling */
+/* ------------------------- */
+.upload-section,
+.result-section,
+.tips-section {
+  background: rgba(255, 255, 255, 0.08); /* More visibility */
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
+/* ------------------------- */
+/* Form Styles */
+/* ------------------------- */
+.form-group {
+  margin-bottom: 15px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="file"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ddd;
+  transition: border-color 0.3s ease-in-out;
+}
+
+input[type="file"]:focus,
+textarea:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+/* ------------------------- */
+/* Submit Button */
+/* ------------------------- */
+button {
+  background: #007BFF;
+  border: none;
+  color: #fff;
+  padding: 15px;
+  font-size: 1.1em;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+/* ------------------------- */
+/* Tips & Recommendations Card */
+/* ------------------------- */
+.card {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* ------------------------- */
+/* Footer */
+/* ------------------------- */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.9em;
+  margin-top: 20px;
+  color: #ccc;
+}

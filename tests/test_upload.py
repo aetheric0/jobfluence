@@ -23,8 +23,10 @@ def test_upload_resume_small_file(monkeypatch):
     '''
     # Patch Tika's response to simulate a successful extraction
     monkeypatch.setattr(
-        'app.models.parser.tika_parser.from_buffer',
-        lambda x: {'content': 'Test resume sample text'}
+        'app.models.parser.extract_text_to_fp',
+        lambda file_stream, output, laparams: output.write(
+            'Test resume sample text'
+        )
     )
 
     # Create a fake, small PDF file (with valid PDF header)
