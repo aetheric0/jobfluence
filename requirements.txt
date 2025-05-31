@@ -9,4 +9,3 @@ tika
 sentence-transformers
 Jinja2
 pytest
-unicodedata

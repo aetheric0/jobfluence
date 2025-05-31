@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
+from fastapi.responses import RedirectResponse
 from app.routers.health import router as health_router
 from app.routers.parser import router as parser_router
 from app.routers.payment import router as payment_router
@@ -20,6 +21,11 @@ app.include_router(payment_router)
 app.include_router(demo_router)
 
 #TODO: mount parser and payment routers
+
+# Optionally redirect root to /demo
+@app.get('/' include_in_schema=False)
+async def root():
+    return RedirectResponse(url='/demo')
 
 if __name__ == '__main__':
     import uvicorn
